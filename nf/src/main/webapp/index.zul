@@ -1,0 +1,76 @@
+<zk>
+	<window title="Gera Nota Fiscal" border="normal" id="exemplo"
+		apply="br.com.starlley.nf.CIndex">
+		<grid>
+			<columns>
+				<column width="12%" />
+				<column />
+			</columns>
+			<rows>
+				<row>
+					<cell align="rigth">
+						<label value="Nome Cliente:" />
+					</cell>
+					<cell align="left">
+						<textbox id="txtbxNomeCliente" />
+					</cell>
+				</row>
+				<row>
+					<cell align="rigth">
+						<label value="Valor Fatura" />
+					</cell>
+					<cell align="left">
+						<decimalbox id="dcmlbxValorFatura" />
+					</cell>
+				</row>
+				<row>
+					<cell align="rigth">
+						<label value="Tipo Imposto:" />
+					</cell>
+					<cell align="left">
+						<radiogroup id="rdgrpTipoImposto">
+							<hlayout spacing="5px">
+								<radio label="ISS" value="1"
+									checked="true" />
+								<radio label="ICMS" value="2" />
+							</hlayout>
+						</radiogroup>
+					</cell>
+				</row>
+				<row>
+					<cell align="center" colspan="2">
+						<button label="Gerar Nota Fiscal"
+							id="btnGerarNotaFiscal" />
+					</cell>
+
+				</row>
+			</rows>
+		</grid>
+		<grid>
+			<columns>
+				<column />
+			</columns>
+			<rows>
+				<row>
+					<listbox id="lstbxNotaFiscal" mold="paging"
+						pageSize="5" model="@{exemplo$composer.listaNotaFiscal}"
+						width="100%" emptyMessage="Nenhum informação na tabela."
+						visible="false">
+						<listhead sizable="true">
+							<listheader label="Imposto" width="50%"
+								align="center" />
+							<listheader label="Valor Bruto" width="50%"
+								align="center" />
+						</listhead>
+						<listitem self="@{each=registro}"
+							value="@{registro}">
+							<listcell label="@{registro.i}" />
+							<listcell label="@{registro.vb}" />
+						</listitem>
+					</listbox>
+				</row>
+			</rows>
+		</grid>
+
+	</window>
+</zk>

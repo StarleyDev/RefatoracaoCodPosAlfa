@@ -1,0 +1,5 @@
+projectKey=br.com.diego:nf
+serverUrl=http://localhost:9000
+dashboardUrl=http://localhost:9000/dashboard/index/br.com.diego:nf
+ceTaskId=AVwm-9ZR7S8BumMUIFS0
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AVwm-9ZR7S8BumMUIFS0
